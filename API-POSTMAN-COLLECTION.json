@@ -1,0 +1,73 @@
+{
+  "info": {
+    "_postman_id": "12345678-1234-1234-1234-123456789abc",
+    "name": "User API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "http://localhost:8080/users/create", "host": ["http://localhost:8080"], "path": ["users", "create"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"testUser\", \"password\": \"Test123\", \"passwordRepeated\": \"Test123\"}"
+        }
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "http://localhost:8080/users/login", "host": ["http://localhost:8080"], "path": ["users", "login"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\": \"testUser\", \"password\": \"Test123\"}"
+        }
+      }
+    },
+    {
+      "name": "Get Users",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "http://localhost:8080/users", "host": ["http://localhost:8080"], "path": ["users"] }
+      }
+    },
+    {
+      "name": "Send Message to Users",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "http://localhost:8080/messages/to", "host": ["http://localhost:8080"], "path": ["messages", "to"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"usersIds\": [1,2,3], \"message\": {\"message\": \"Hello Users!\"} }"
+        }
+      }
+    },
+    {
+      "name": "Send Message to All Users",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "http://localhost:8080/messages/to-all", "host": ["http://localhost:8080"], "path": ["messages", "to-all"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"message\": \"Hello Everyone!\" }"
+        }
+      }
+    }
+  ]
+}
